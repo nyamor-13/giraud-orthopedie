@@ -1,0 +1,12 @@
+# Pré-lancement : le site n'est volontairement PAS indexé tant que le contenu
+# n'a pas été validé. Pour le rendre public dans les moteurs de recherche :
+#   1) supprimer la balise <meta name="robots" content="noindex, nofollow"> de chaque page ;
+#   2) remplacer le bloc ci-dessous par les lignes commentées « EN LIGNE ».
+
+User-agent: *
+Disallow: /
+
+# --- EN LIGNE (à activer le moment venu) ---
+# User-agent: *
+# Allow: /
+# Sitemap: https://www.giraud-orthopedie.fr/sitemap.xml
