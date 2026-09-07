@@ -635,6 +635,25 @@ figcaption, .credit {
 /* Marque éditoriale subtile sous les titres de section */
 .rule-accent { width: 2.5rem; height: 2px; background: var(--accent); border: 0; margin-bottom: var(--sp-5); }
 
+/* --- Bande « marques » (noms cités, sans logo) --------------------------- */
+.brands-band {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: clamp(1.25rem, 1rem + 1vw, 2rem);
+  background: var(--white);
+}
+.brands-band .eyebrow { margin-bottom: var(--sp-3); }
+.brands-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.6rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.brands-list li { font-weight: 600; font-size: var(--fs-200); color: var(--ink-2); letter-spacing: 0.01em; }
+.brands-note { margin-top: var(--sp-4); font-size: var(--fs-50); color: var(--muted); }
+
 /* --- Impression ---------------------------------------------------------- */
 @media print {
   .site-header, .site-footer, .cta-band, .menu-toggle, .skip-link { display: none !important; }
