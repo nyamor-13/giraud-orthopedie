@@ -60,3 +60,49 @@
 
   sync();
 })();
+
+/* Onglets accessibles (WAI-ARIA) — « Focus par sport ».
+   Sans JavaScript, tous les panneaux restent affichés (voir CSS). */
+(function () {
+  'use strict';
+  var groups = document.querySelectorAll('.tabs');
+  Array.prototype.forEach.call(groups, function (tabs) {
+    var tablist = tabs.querySelector('[role="tablist"]');
+    var tabButtons = Array.prototype.slice.call(tabs.querySelectorAll('[role="tab"]'));
+    if (!tablist || !tabButtons.length) return;
+    var panels = tabButtons.map(function (t) { return document.getElementById(t.getAttribute('aria-controls')); });
+
+    function select(idx, moveFocus) {
+      tabButtons.forEach(function (t, i) {
+        var on = i === idx;
+        t.setAttribute('aria-selected', on ? 'true' : 'false');
+        t.tabIndex = on ? 0 : -1;
+        if (panels[i]) {
+          if (on) { panels[i].removeAttribute('hidden'); }
+          else { panels[i].setAttribute('hidden', ''); }
+        }
+      });
+      if (moveFocus) { tabButtons[idx].focus(); }
+    }
+
+    tabButtons.forEach(function (t, i) {
+      t.addEventListener('click', function () { select(i, false); });
+      t.addEventListener('keydown', function (e) {
+        var n = tabButtons.length, idx;
+        switch (e.key) {
+          case 'ArrowRight': case 'ArrowDown': idx = (i + 1) % n; break;
+          case 'ArrowLeft':  case 'ArrowUp':   idx = (i - 1 + n) % n; break;
+          case 'Home': idx = 0; break;
+          case 'End':  idx = n - 1; break;
+          default: return;
+        }
+        e.preventDefault();
+        select(idx, true);
+      });
+    });
+
+    var start = 0;
+    tabButtons.forEach(function (t, i) { if (t.getAttribute('aria-selected') === 'true') { start = i; } });
+    select(start, false);
+  });
+})();

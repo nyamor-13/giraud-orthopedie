@@ -654,6 +654,42 @@ figcaption, .credit {
 .brands-list li { font-weight: 600; font-size: var(--fs-200); color: var(--ink-2); letter-spacing: 0.01em; }
 .brands-note { margin-top: var(--sp-4); font-size: var(--fs-50); color: var(--muted); }
 
+/* --- Onglets « Focus par sport » (WAI-ARIA) ------------------------------ */
+.tabs__list {
+  display: none;
+  gap: clamp(0.75rem, 2.2vw, 2rem);
+  border-bottom: 1px solid var(--line);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.tabs__list::-webkit-scrollbar { display: none; }
+.js .tabs__list { display: flex; }
+.tabs__tab {
+  flex: 0 0 auto;
+  appearance: none;
+  background: none;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  padding: 0.8rem 0.15rem;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: var(--fs-100);
+  color: var(--muted);
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color 0.15s var(--ease), border-color 0.15s var(--ease);
+}
+.tabs__tab:hover { color: var(--ink); }
+.tabs__tab[aria-selected="true"] { color: var(--accent-2); border-bottom-color: var(--accent); }
+.tabs__panels { margin-top: var(--sp-6); }
+.tabs__panel[hidden] { display: none; }
+.tabs__panel:focus-visible { outline: 3px solid var(--focus); outline-offset: 4px; border-radius: 2px; }
+.tabs__panel-title { margin-bottom: var(--sp-5); }
+/* Sans JavaScript : tous les panneaux sont empilés et séparés */
+html:not(.js) .tabs__panel + .tabs__panel { margin-top: var(--sp-7); border-top: 1px solid var(--line); padding-top: var(--sp-6); }
+
 /* --- Impression ---------------------------------------------------------- */
 @media print {
   .site-header, .site-footer, .cta-band, .menu-toggle, .skip-link { display: none !important; }
