@@ -687,6 +687,8 @@ figcaption, .credit {
 .tabs__panel[hidden] { display: none; }
 .tabs__panel:focus-visible { outline: 3px solid var(--focus); outline-offset: 4px; border-radius: 2px; }
 .tabs__panel-title { margin-bottom: var(--sp-5); }
+/* En mode onglets (JS), le titre de panneau ferait doublon avec l'onglet : on le masque visuellement mais on le garde pour les lecteurs d'écran. */
+.js .tabs__panel-title { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 /* Sans JavaScript : tous les panneaux sont empilés et séparés */
 html:not(.js) .tabs__panel + .tabs__panel { margin-top: var(--sp-7); border-top: 1px solid var(--line); padding-top: var(--sp-6); }
 
