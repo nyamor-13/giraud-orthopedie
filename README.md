@@ -1,7 +1,7 @@
 # Giraud Orthopédie — site vitrine
 
 Site statique (HTML/CSS, sans build) pour le cabinet de **Pierre-Emmanuel Giraud**,
-orthopédiste-orthésiste-podologue à Paris 5ᵉ. Mise en avant de l'activité **course à pied
+orthopédiste-orthésiste-podologiste à Paris 5ᵉ. Mise en avant de l'activité **course à pied
 & triathlon**. Design « éditorial clinique », sobre et optimisé pour l'**accessibilité (WCAG 2.1 AA)**.
 
 ## Pages
@@ -10,7 +10,7 @@ orthopédiste-orthésiste-podologue à Paris 5ᵉ. Mise en avant de l'activité 
 |---|---|
 | `index.html` | Accueil — présentation, prestations, focus sport, parcours de soin |
 | `praticien.html` | Le praticien, l'approche sur-mesure, le métier |
-| `prestations.html` | Détail des prestations (semelles, hallux valgus, orthoplasties, main/poignet, réflexologie) |
+| `prestations.html` | Détail des prestations (semelles, hallux valgus, orthoplasties, main/poignet) |
 | `sport.html` | **Course à pied & triathlon** — bilan, pathologies (accordéon), triathlon, pluridisciplinarité, prévention, sources |
 | `infos-pratiques.html` | Accès, horaires, tarifs indicatifs, première visite |
 | `mentions-legales.html` | Mentions légales, RGPD, crédits photos & typographies |
