@@ -71,6 +71,34 @@ en attente — **à confirmer par le praticien** :
 Contrastes AA, navigation clavier, focus visibles, lien d'évitement, repères ARIA, respect de
 `prefers-reduced-motion`, cibles tactiles confortables, menu mobile accessible (`aria-expanded`).
 
+## Mise en production (go-live)
+
+**État :** pré-lancement, site non indexé. Ci-dessous ce qui est prêt et ce qui reste à faire.
+
+### Déjà fait (côté code, autonome)
+- Page **FAQ** avec données structurées `FAQPage`, `sitemap.xml`, `llms.txt` (référencement IA).
+- Balises `canonical` + Open Graph/Twitter sur toutes les pages (domaine cible `https://www.giraud-orthopedie.fr`).
+- Données structurées `MedicalBusiness` (accueil, avec `url`, `priceRange`, `sameAs`).
+- Corrections métier : « podologiste », tarifs fixes (80 € / 230 €), sans réflexologie ni secteur 1, métro Censier-Daubenton.
+
+### Étapes de bascule (dans l'ordre)
+1. **Compléter les mentions légales** : SIRET, n° ADELI/RPPS, assurance RCP (obligatoire pour un site professionnel).
+2. **Brancher le domaine** `www.giraud-orthopedie.fr` :
+   - Fichier `CNAME` à la racine = `www.giraud-orthopedie.fr` (ou Settings → Pages).
+   - DNS chez le registrar : `CNAME` `www` → `nyamor-13.github.io` ; apex → 4 `A` vers les IP GitHub Pages (185.199.108–111.153) + `AAAA` IPv6.
+   - Propagation, puis activer **Enforce HTTPS**.
+   - ⚠️ Le domaine pointe aujourd'hui vers l'ancien site : la bascule le remplace — à caler dans le temps.
+3. **Rendre indexable** : retirer `<meta name="robots" content="noindex, nofollow">` de chaque `.html`, et remplacer `Disallow: /` de `robots.txt` par le bloc « EN LIGNE ».
+4. **Compléter** les horaires (site + `openingHours` du JSON-LD) une fois connus.
+
+### Référencement (après la bascule)
+- **Google Search Console** : valider le domaine (TXT DNS), soumettre `sitemap.xml`, demander l'indexation.
+- **Bing Webmaster Tools** : import depuis Search Console + sitemap.
+- **Fiche Google (Business Profile)** : créer/revendiquer (nom, adresse, tél, horaires, catégorie, site, photos) — levier n°1 en visibilité locale.
+- **Cohérence NAP** (nom-adresse-téléphone) identique partout (site, Doctolib, fiche Google, annuaires).
+- **Liens entrants** : pointer le lien « site » de Doctolib, Instagram, Facebook, LinkedIn vers giraud-orthopedie.fr.
+- **IA / LLM** : `llms.txt` en place ; au lancement, autoriser les robots d'IA dans `robots.txt` si souhaité.
+
 ## Crédits
 
 - Typographies : Fraunces (Undercase Type Foundry) & Inter (Rasmus Andersson) — SIL OFL.
