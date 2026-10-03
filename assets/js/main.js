@@ -7,7 +7,7 @@
   var nav = document.getElementById('site-nav');
   if (!toggle || !nav) return;
 
-  var mq = window.matchMedia('(max-width: 64em)');
+  var mq = window.matchMedia('(max-width: 80em)');
 
   function isMobile() { return mq.matches; }
 

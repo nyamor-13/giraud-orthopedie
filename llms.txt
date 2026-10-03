@@ -5,6 +5,8 @@
 ## Pages
 - [Accueil](https://www.giraud-orthopedie.fr/) : présentation, atelier, prestations, focus sport, prise de rendez-vous.
 - [Semelles orthopédiques sur mesure à Paris 5ᵉ](https://www.giraud-orthopedie.fr/semelles-orthopediques-paris.html) : bilan podologique, analyse des appuis, fabrication en atelier (photos), semelles ville/running/raquette et sports collectifs/vélo/ski, tarifs, remboursement, garantie, accès depuis le 5ᵉ et le 13ᵉ.
+- [Où avez-vous mal ?](https://www.giraud-orthopedie.fr/douleurs.html) : entrée par la douleur (talon, voûte, avant-pied, orteils, cheville, genou, pouce et doigts, poignet) — causes fréquentes, appareillage utile, signes qui imposent un avis médical.
+- [Professionnels de santé](https://www.giraud-orthopedie.fr/professionnels-de-sante.html) : pour les médecins et kinésithérapeutes — dispositifs réalisés, indications, prescription, contact direct pour adresser un patient.
 - [Prestations](https://www.giraud-orthopedie.fr/prestations.html) : semelles et orthèses plantaires, orthèses de nuit pour hallux valgus, orthoplasties, orthèses thermoformées main/poignet/doigts.
 - [Sport](https://www.giraud-orthopedie.fr/sport.html) : podologie du sport — course, trail, sports de raquette et collectifs, triathlon, ski — analyse de la foulée sur tapis de course et plateforme de pression, pathologies fréquentes, prévention, lien avec le kinésithérapeute du sport.
 - [Le praticien](https://www.giraud-orthopedie.fr/praticien.html) : parcours, formation à la prévention des blessures du coureur (La Clinique du Coureur, 2020), marathonien.

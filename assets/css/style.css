@@ -271,14 +271,16 @@ strong { font-weight: 600; }
   color: var(--muted);
 }
 
-.site-nav { display: flex; align-items: center; gap: clamp(0.5rem, 1.5vw, 1.6rem); }
+.site-nav { display: flex; align-items: center; gap: clamp(0.5rem, 1.2vw, 1.25rem); }
 .site-nav__list {
   display: flex;
   align-items: center;
-  gap: clamp(0.5rem, 1.5vw, 1.5rem);
+  gap: clamp(0.5rem, 0.9vw, 0.85rem);
   list-style: none;
   margin: 0; padding: 0;
 }
+.site-nav .btn { white-space: nowrap; }
+@media (min-width: 80.0625em) { .brand__name small { white-space: nowrap; } }
 .site-nav__link {
   display: inline-block;
   padding: 0.4rem 0.15rem;
@@ -319,8 +321,9 @@ strong { font-weight: 600; }
 .menu-toggle[aria-expanded="true"] .menu-toggle__bars span { opacity: 0; }
 .menu-toggle[aria-expanded="true"] .menu-toggle__bars::after { transform: translateY(-5px) rotate(-45deg); }
 
-/* Comportement mobile — uniquement si JS est actif (amélioration progressive) */
-@media (max-width: 64em) {
+/* Comportement mobile — uniquement si JS est actif (amélioration progressive).
+   Seuil à 80em : en dessous, les 6 liens + le bouton ne tiennent plus sur une ligne. */
+@media (max-width: 80em) {
   .js .menu-toggle { display: inline-flex; }
   .js .site-nav[data-collapsible] {
     position: absolute;
@@ -743,6 +746,30 @@ a.rating:hover .rating__more { color: var(--accent-2); }
 .js .tabs__panel-title { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 /* Sans JavaScript : tous les panneaux sont empilés et séparés */
 html:not(.js) .tabs__panel + .tabs__panel { margin-top: var(--sp-7); border-top: 1px solid var(--line); padding-top: var(--sp-6); }
+
+/* --- « Où avez-vous mal ? » : schéma cliquable ------------------------- */
+.bodymap { display: grid; gap: var(--sp-5); }
+@media (min-width: 48em) { .bodymap { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.bodymap figure { margin: 0; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: var(--sp-5) var(--sp-4); }
+.bodymap svg { width: 100%; height: auto; max-height: 27rem; margin-inline: auto; }
+.bodymap figcaption { text-align: center; font-size: var(--fs-75); color: var(--muted); margin-top: var(--sp-3); }
+.body-outline { fill: var(--paper-2); stroke: var(--line-2); stroke-width: 2; }
+.zone { cursor: pointer; }
+.zone__area { fill: var(--accent); fill-opacity: 0.1; stroke: var(--accent); stroke-opacity: 0.45; stroke-width: 1.5; transition: fill-opacity 0.15s var(--ease); }
+.zone__line { stroke: var(--line-2); stroke-width: 1.2; }
+.zone__label { font-family: var(--font-sans); font-size: 13px; font-weight: 600; fill: var(--ink-2); }
+.zone:hover .zone__area { fill-opacity: 0.35; }
+.zone:hover .zone__label { fill: var(--accent-2); }
+.zone:focus { outline: none; }
+.zone:focus-visible .zone__area { fill-opacity: 0.35; stroke: var(--focus); stroke-width: 3; stroke-opacity: 1; }
+.zone:focus-visible .zone__label { fill: var(--focus); text-decoration: underline; }
+.zone-list { display: flex; flex-wrap: wrap; gap: var(--sp-2); list-style: none; padding: 0; margin: var(--sp-6) 0 0; }
+.pain__grid { display: grid; gap: clamp(1.5rem, 1rem + 3vw, 3.5rem); align-items: start; }
+@media (min-width: 56em) { .pain__grid { grid-template-columns: 1.15fr 1fr; } }
+.pain__grid h3 { font-size: var(--fs-300); margin-bottom: var(--sp-2); }
+.pain__grid .prose h3 + p, .pain__grid .prose h3 + ul { margin-top: var(--sp-2); }
+.note--alert { border-left-color: #8A5A00; }
+.back-link { display: inline-block; margin-top: var(--sp-5); font-size: var(--fs-75); color: var(--muted); }
 
 /* --- Barre d'action mobile (RDV / appel toujours à portée de pouce) ------ */
 .mobile-cta { display: none; }
