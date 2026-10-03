@@ -220,6 +220,7 @@ strong { font-weight: 600; }
 
 /* Grilles utilitaires */
 .grid { display: grid; gap: var(--sp-5); }
+.grid > *, .hero__grid > *, .cta-band__grid > * { min-width: 0; }
 @media (min-width: 40em) {
   .grid--2 { grid-template-columns: repeat(2, 1fr); }
   .grid--3 { grid-template-columns: repeat(3, 1fr); }
@@ -322,8 +323,8 @@ strong { font-weight: 600; }
 .menu-toggle[aria-expanded="true"] .menu-toggle__bars::after { transform: translateY(-5px) rotate(-45deg); }
 
 /* Comportement mobile — uniquement si JS est actif (amélioration progressive).
-   Seuil à 80em : en dessous, les 6 liens + le bouton ne tiennent plus sur une ligne. */
-@media (max-width: 80em) {
+   Seuil à 70em : en dessous, le menu et le bouton ne tiennent plus sur une ligne. */
+@media (max-width: 70em) {
   .js .menu-toggle { display: inline-flex; }
   .js .site-nav[data-collapsible] {
     position: absolute;
@@ -355,6 +356,59 @@ strong { font-weight: 600; }
     color: var(--accent);
   }
   .js .site-nav[data-collapsible] .btn { margin-top: var(--sp-4); justify-content: center; }
+}
+
+
+/* --- Menus déroulants (Soins & appareillages, Le cabinet) --------------- */
+.site-nav__item { position: relative; }
+.site-nav__toggle {
+  appearance: none; background: none; border: 0; border-bottom: 2px solid transparent;
+  font: inherit; font-size: var(--fs-75); font-weight: 500; color: var(--ink-2);
+  display: inline-flex; align-items: center; gap: 0.3em; cursor: pointer;
+}
+.site-nav__toggle:hover { color: var(--ink); }
+.site-nav__chev { width: 0.95em; height: 0.95em; transition: transform 0.15s var(--ease); }
+.site-nav__toggle[aria-expanded="true"] .site-nav__chev { transform: rotate(180deg); }
+.has-sub.is-current > .site-nav__toggle { color: var(--ink); border-bottom-color: var(--accent); }
+.site-nav__heading { display: none; }
+.site-nav__lang { font-weight: 600; letter-spacing: 0.04em; }
+.site-nav__lang-long { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.site-nav__sub {
+  list-style: none; margin: 0; padding: 0.4rem;
+  position: absolute; top: calc(100% + 0.55rem); left: -0.6rem; z-index: 120;
+  min-width: 17.5rem;
+  background: var(--white); border: 1px solid var(--line); border-radius: var(--radius);
+  box-shadow: 0 18px 36px -22px rgba(0, 0, 0, 0.4);
+}
+.site-nav__sub a {
+  display: block; padding: 0.65rem 0.8rem; border-radius: 2px;
+  font-size: var(--fs-75); font-weight: 500; color: var(--ink-2); text-decoration: none;
+}
+.site-nav__sub a:hover { background: var(--accent-tint); color: var(--accent-2); }
+.site-nav__sub a[aria-current="page"] { color: var(--accent); font-weight: 600; }
+.js .site-nav__sub { display: none; }
+.js .has-sub.is-open > .site-nav__sub { display: block; }
+html:not(.js) .site-nav__sub { display: none; }
+html:not(.js) .has-sub:hover > .site-nav__sub, html:not(.js) .has-sub:focus-within > .site-nav__sub { display: block; }
+
+@media (max-width: 70em) {
+  .js .site-nav[data-collapsible] .site-nav__item { position: static; }
+  .js .site-nav[data-collapsible] .site-nav__list > li > .site-nav__link { display: block; }
+  .js .site-nav[data-collapsible] .site-nav__toggle { display: none; }
+  .js .site-nav[data-collapsible] .site-nav__heading {
+    display: block; padding: 1.1rem 0 0.35rem;
+    font-size: var(--fs-50); font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted);
+  }
+  .js .site-nav[data-collapsible] .site-nav__sub {
+    display: block; position: static; min-width: 0; padding: 0;
+    background: none; border: 0; box-shadow: none;
+  }
+  .js .site-nav[data-collapsible] .site-nav__sub a {
+    padding: 0.8rem 0 0.8rem 0.9rem; font-size: var(--fs-200);
+    border-left: 2px solid var(--line); border-bottom: 1px solid var(--line); border-radius: 0;
+  }
+  .js .site-nav[data-collapsible] .site-nav__sub a[aria-current="page"] { border-left-color: var(--accent); }
+  .js .site-nav[data-collapsible] .site-nav__lang-long { position: static; width: auto; height: auto; clip: auto; }
 }
 
 /* --- Boutons ------------------------------------------------------------- */
@@ -617,6 +671,7 @@ a.rating:hover .rating__more { color: var(--accent-2); }
 .table tr:last-child td, .table tr:last-child th { border-bottom: 1px solid var(--line); }
 .table th[scope="row"] { font-weight: 500; color: var(--ink); }
 .table td.num { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; color: var(--ink-2); }
+@media (max-width: 40em) { .table td.num { white-space: normal; min-width: 5.5em; } .table th, .table td { padding-inline: var(--sp-3); } }
 
 /* --- Fil d'Ariane -------------------------------------------------------- */
 .breadcrumb { font-size: var(--fs-50); color: var(--muted); padding-top: var(--sp-5); }
@@ -644,7 +699,8 @@ a.rating:hover .rating__more { color: var(--accent-2); }
 .footer-col ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.55rem; }
 .footer-col a { color: var(--ink-2); text-decoration: none; font-size: var(--fs-100); }
 .footer-col a:hover { color: var(--accent); text-decoration: underline; }
-.footer-col address { font-style: normal; color: var(--ink-2); font-size: var(--fs-100); line-height: 1.7; }
+.footer-col address { font-style: normal; color: var(--ink-2); font-size: var(--fs-100); line-height: 1.7; overflow-wrap: anywhere; }
+@media (max-width: 46em) { .footer-col ul a { display: inline-block; padding-block: 0.3rem; } }
 .footer-brand .brand { margin-bottom: var(--sp-4); }
 .footer-brand p { color: var(--muted); font-size: var(--fs-100); max-width: 26em; }
 .footer-social { display: flex; gap: 0.6rem; margin-top: var(--sp-4); }
@@ -749,7 +805,8 @@ html:not(.js) .tabs__panel + .tabs__panel { margin-top: var(--sp-7); border-top:
 
 /* --- « Où avez-vous mal ? » : schéma cliquable ------------------------- */
 .bodymap { display: grid; gap: var(--sp-5); }
-@media (min-width: 48em) { .bodymap { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 40em) { .bodymap { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 60em) { .bodymap { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 .bodymap figure { margin: 0; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: var(--sp-5) var(--sp-4); }
 .bodymap svg { width: 100%; height: auto; max-height: 27rem; margin-inline: auto; }
 .bodymap figcaption { text-align: center; font-size: var(--fs-75); color: var(--muted); margin-top: var(--sp-3); }

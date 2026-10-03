@@ -122,11 +122,28 @@
     <nav class="site-nav" id="site-nav" data-collapsible aria-label="Navigation principale">
       <ul class="site-nav__list">
         <li><a class="site-nav__link" href="douleurs.html" aria-current="page">Où avez-vous mal&nbsp;?</a></li>
-        <li><a class="site-nav__link" href="semelles-orthopediques-paris.html">Semelles</a></li>
-        <li><a class="site-nav__link" href="prestations.html">Prestations</a></li>
+        <li class="site-nav__item has-sub">
+          <button class="site-nav__link site-nav__toggle" type="button" aria-expanded="false" aria-controls="sub-soins">Soins &amp; appareillages<svg class="site-nav__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+          <span class="site-nav__heading">Soins &amp; appareillages</span>
+          <ul class="site-nav__sub" id="sub-soins">
+          <li><a href="semelles-orthopediques-paris.html">Semelles orthopédiques</a></li>
+          <li><a href="orthese-pouce-poignet-sur-mesure.html">Orthèses de pouce &amp; de poignet</a></li>
+          <li><a href="prestations.html#hallux">Orthèses de nuit &amp; orthoplasties</a></li>
+          <li><a href="prestations.html">Toutes les prestations</a></li>
+          </ul>
+        </li>
         <li><a class="site-nav__link" href="sport.html">Sport</a></li>
-        <li><a class="site-nav__link" href="praticien.html">Le praticien</a></li>
-        <li><a class="site-nav__link" href="infos-pratiques.html">Infos pratiques</a></li>
+        <li class="site-nav__item has-sub">
+          <button class="site-nav__link site-nav__toggle" type="button" aria-expanded="false" aria-controls="sub-cabinet">Le cabinet<svg class="site-nav__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+          <span class="site-nav__heading">Le cabinet</span>
+          <ul class="site-nav__sub" id="sub-cabinet">
+          <li><a href="praticien.html">Le praticien</a></li>
+          <li><a href="infos-pratiques.html">Accès, horaires &amp; tarifs</a></li>
+          <li><a href="faq.html">Questions fréquentes</a></li>
+          <li><a href="professionnels-de-sante.html">Professionnels de santé</a></li>
+          </ul>
+        </li>
+        <li><a class="site-nav__link site-nav__lang" href="custom-orthotics-paris.html" hreflang="en" lang="en" title="English version">EN<span class="site-nav__lang-long"> — English version</span></a></li>
         <li><a class="btn btn--primary" href="https://www.doctolib.fr/orthopediste-orthesiste/paris/pierre-emmanuel-giraud" target="_blank" rel="noopener">Prendre rendez-vous</a></li>
       </ul>
     </nav>
@@ -147,7 +164,7 @@
       <div class="section-head" style="margin-bottom:var(--sp-6)">
         <span class="eyebrow">Partir de votre douleur</span>
         <h1>Où avez-vous mal&nbsp;?</h1>
-        <p class="lead">Touchez la zone qui vous gêne&nbsp;: vous verrez les causes les plus fréquentes, ce qu’un appareillage sur mesure peut apporter, et les signes qui doivent d’abord vous faire consulter un médecin.</p>
+        <p class="lead">Touchez la zone qui vous gêne, sur le pied, la jambe ou la main&nbsp;: vous verrez les causes les plus fréquentes, ce qu’un appareillage sur mesure peut apporter, et les signes qui doivent d’abord vous faire consulter un médecin.</p>
       </div>
 
       <div class="bodymap">
@@ -177,6 +194,33 @@
             </a>
           </svg>
           <figcaption>Le pied, vu de dessous</figcaption>
+        </figure>
+        <figure>
+          <svg viewBox="0 0 340 450" role="group" aria-labelledby="jambe-titre">
+            <title id="jambe-titre">Schéma de la jambe vue de profil, zones cliquables</title>
+            <defs>
+              <clipPath id="leg"><path transform="translate(70 0)" d="M80 10 L80 120 C 80 150 58 175 60 215 C 62 260 88 300 92 335 C 94 355 84 370 84 388 C 84 410 96 422 116 422 L 236 422 C 252 422 260 414 258 404 C 256 394 240 388 220 382 C 196 375 172 366 156 350 C 150 330 150 290 152 250 C 154 210 162 180 166 150 C 170 130 162 110 160 90 L 158 10 Z"/></clipPath>
+            </defs>
+            <path class="body-outline" transform="translate(70 0)" d="M80 10 L80 120 C 80 150 58 175 60 215 C 62 260 88 300 92 335 C 94 355 84 370 84 388 C 84 410 96 422 116 422 L 236 422 C 252 422 260 414 258 404 C 256 394 240 388 220 382 C 196 375 172 366 156 350 C 150 330 150 290 152 250 C 154 210 162 180 166 150 C 170 130 162 110 160 90 L 158 10 Z"/>
+            <a class="zone" href="#genou" aria-label="Genou">
+              <rect class="zone__area" x="110" y="100" width="140" height="64" clip-path="url(#leg)"/>
+              <line class="zone__line" x1="238" y1="132" x2="266" y2="132"/><text class="zone__label" x="270" y="136">Genou</text>
+            </a>
+            <a class="zone" href="#genou" aria-label="Jambe (tibia et mollet)">
+              <rect class="zone__area" x="110" y="164" width="140" height="132" clip-path="url(#leg)"/>
+              <line class="zone__line" x1="228" y1="232" x2="266" y2="232"/><text class="zone__label" x="270" y="236">Jambe</text>
+            </a>
+            <a class="zone" href="#cheville" aria-label="Cheville">
+              <ellipse class="zone__area" cx="212" cy="350" rx="34" ry="36" clip-path="url(#leg)"/>
+              <polyline class="zone__line" fill="none" points="226,350 246,330 266,330"/><text class="zone__label" x="270" y="334">Cheville</text>
+            </a>
+            <a class="zone" href="#cheville" aria-label="Tendon d’Achille">
+              <ellipse class="zone__area" cx="170" cy="332" rx="17" ry="52" clip-path="url(#leg)"/>
+              <line class="zone__line" x1="118" y1="330" x2="160" y2="330"/><text class="zone__label" x="114" y="334" text-anchor="end">Achille</text>
+            </a>
+            <path class="body-outline" style="fill:none" transform="translate(70 0)" d="M80 10 L80 120 C 80 150 58 175 60 215 C 62 260 88 300 92 335 C 94 355 84 370 84 388 C 84 410 96 422 116 422 L 236 422 C 252 422 260 414 258 404 C 256 394 240 388 220 382 C 196 375 172 366 156 350 C 150 330 150 290 152 250 C 154 210 162 180 166 150 C 170 130 162 110 160 90 L 158 10 Z"/>
+          </svg>
+          <figcaption>La jambe et la cheville, de profil</figcaption>
         </figure>
         <figure>
           <svg viewBox="0 0 290 450" role="group" aria-labelledby="main-titre">
@@ -391,7 +435,7 @@
         <div class="flow">
           <aside class="note">
             <h3>Ce que l’appareillage peut apporter</h3>
-            <p>Une <strong>orthèse thermoformée sur mesure</strong> du pouce ou du doigt, de repos (la nuit) ou de fonction (dans la journée), qui soulage tout en préservant les gestes utiles. <a href="prestations.html#membre-superieur">Orthèses de la main</a></p>
+            <p>Une <strong>orthèse thermoformée sur mesure</strong> du pouce ou du doigt, de repos (la nuit) ou de fonction (dans la journée), qui soulage tout en préservant les gestes utiles. <a href="orthese-pouce-poignet-sur-mesure.html">Orthèses de pouce sur mesure</a></p>
           </aside>
           <aside class="note note--alert">
             <h3>Consultez d’abord un médecin si</h3>
@@ -418,7 +462,7 @@
         <div class="flow">
           <aside class="note">
             <h3>Ce que l’appareillage peut apporter</h3>
-            <p>Une <strong>orthèse de poignet ou de poignet-pouce</strong>, thermoformée sur mesure, pour mettre au repos ou protéger. <a href="prestations.html#membre-superieur">Orthèses du poignet</a></p>
+            <p>Une <strong>orthèse de poignet ou de poignet-pouce</strong>, thermoformée sur mesure, pour mettre au repos ou protéger. <a href="orthese-pouce-poignet-sur-mesure.html">Orthèses de poignet sur mesure</a></p>
           </aside>
           <aside class="note note--alert">
             <h3>Consultez d’abord un médecin si</h3>
@@ -474,34 +518,35 @@
         </div>
       </div>
       <div class="footer-col">
+        <h2>Soins &amp; appareillages</h2>
+        <ul>
+          <li><a href="douleurs.html" aria-current="page">Où avez-vous mal&nbsp;?</a></li>
+          <li><a href="semelles-orthopediques-paris.html">Semelles orthopédiques</a></li>
+          <li><a href="orthese-pouce-poignet-sur-mesure.html">Orthèses de pouce &amp; de poignet</a></li>
+          <li><a href="prestations.html">Toutes les prestations</a></li>
+          <li><a href="sport.html">Sport</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
         <h2>Le cabinet</h2>
+        <ul>
+          <li><a href="praticien.html">Le praticien</a></li>
+          <li><a href="infos-pratiques.html">Accès, horaires &amp; tarifs</a></li>
+          <li><a href="faq.html">Questions fréquentes</a></li>
+          <li><a href="professionnels-de-sante.html">Professionnels de santé</a></li>
+          <li><a href="custom-orthotics-paris.html" hreflang="en" lang="en">English version</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h2>Contact</h2>
         <address>
           30-32 rue Broca<br>
           75005 Paris<br>
-          <a href="tel:+33684456397">06&nbsp;84&nbsp;45&nbsp;63&nbsp;97</a>
+          <a href="tel:+33684456397">06&nbsp;84&nbsp;45&nbsp;63&nbsp;97</a><br>
+          <a href="mailto:giraud.orthopedie@gmail.com">giraud.orthopedie@gmail.com</a>
         </address>
         <p style="margin-top:var(--sp-4)"><a class="rating rating--footer" href="https://www.google.com/maps?cid=18077941117600670560" target="_blank" rel="noopener"><span class="stars" style="--rating:4.7" aria-hidden="true"></span><span><span class="rating__score">4,7/5</span> · 19 avis Google<span class="sr-only"> (nouvelle fenêtre)</span></span></a></p>
-      </div>
-      <div class="footer-col">
-        <h2>Navigation</h2>
-        <ul>
-          <li><a href="douleurs.html">Où avez-vous mal&nbsp;?</a></li>
-          <li><a href="semelles-orthopediques-paris.html">Semelles orthopédiques</a></li>
-          <li><a href="praticien.html">Le praticien</a></li>
-          <li><a href="prestations.html">Prestations</a></li>
-          <li><a href="sport.html">Sport</a></li>
-          <li><a href="infos-pratiques.html">Infos pratiques</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h2>Rendez-vous</h2>
-        <ul>
-          <li><a href="https://www.doctolib.fr/orthopediste-orthesiste/paris/pierre-emmanuel-giraud" target="_blank" rel="noopener">Doctolib</a></li>
-          <li><a href="infos-pratiques.html">Horaires &amp; accès</a></li>
-          <li><a href="tel:+33684456397">Par téléphone</a></li>
-          <li><a href="professionnels-de-sante.html">Professionnels de santé&nbsp;: adresser un patient</a></li>
-        </ul>
+        <p style="margin-top:var(--sp-3)"><a href="https://www.doctolib.fr/orthopediste-orthesiste/paris/pierre-emmanuel-giraud" target="_blank" rel="noopener">Prendre rendez-vous sur Doctolib</a></p>
       </div>
     </div>
     <div class="footer-bottom">

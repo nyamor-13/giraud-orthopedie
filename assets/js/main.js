@@ -7,7 +7,7 @@
   var nav = document.getElementById('site-nav');
   if (!toggle || !nav) return;
 
-  var mq = window.matchMedia('(max-width: 80em)');
+  var mq = window.matchMedia('(max-width: 70em)');
 
   function isMobile() { return mq.matches; }
 
@@ -120,5 +120,36 @@
       box.appendChild(frame);
       frame.focus();
     });
+  });
+})();
+
+/* Menus déroulants du bandeau (bouton « disclosure » accessible) */
+(function () {
+  var nav = document.getElementById('site-nav');
+  if (!nav) return;
+  var toggles = nav.querySelectorAll('.site-nav__toggle');
+  if (!toggles.length) return;
+  function setSub(btn, open) {
+    btn.setAttribute('aria-expanded', String(open));
+    btn.parentElement.classList.toggle('is-open', open);
+  }
+  function closeAll(except) {
+    toggles.forEach(function (b) { if (b !== except) setSub(b, false); });
+  }
+  toggles.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var open = btn.getAttribute('aria-expanded') !== 'true';
+      closeAll(btn);
+      setSub(btn, open);
+    });
+    btn.parentElement.addEventListener('focusout', function (e) {
+      if (e.relatedTarget && !btn.parentElement.contains(e.relatedTarget)) setSub(btn, false);
+    });
+  });
+  document.addEventListener('click', function (e) { if (!nav.contains(e.target)) closeAll(); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key !== 'Escape') return;
+    var open = nav.querySelector('.has-sub.is-open > .site-nav__toggle');
+    if (open) { closeAll(); open.focus(); }
   });
 })();
