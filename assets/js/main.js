@@ -106,3 +106,19 @@
     select(start, false);
   });
 })();
+
+/* Carte OpenStreetMap chargée uniquement à la demande (aucun appel tiers par défaut) */
+(function () {
+  document.querySelectorAll('[data-map-src]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var box = btn.closest('[data-map]');
+      var frame = document.createElement('iframe');
+      frame.src = btn.getAttribute('data-map-src');
+      frame.title = 'Plan d’accès au cabinet, 30-32 rue Broca, Paris 5e (OpenStreetMap)';
+      frame.setAttribute('loading', 'lazy');
+      box.innerHTML = '';
+      box.appendChild(frame);
+      frame.focus();
+    });
+  });
+})();

@@ -27,6 +27,7 @@
 {
   "@context": "https://schema.org",
   "@type": "MedicalBusiness",
+  "@id": "https://www.giraud-orthopedie.fr/#cabinet",
   "name": "Giraud Orthopédie — Pierre-Emmanuel Giraud",
   "telephone": "+33684456397",
   "url": "https://www.giraud-orthopedie.fr",
@@ -37,6 +38,8 @@
     "addressLocality": "Paris",
     "addressCountry": "FR"
   },
+  "geo": {"@type": "GeoCoordinates", "latitude": 48.8382762, "longitude": 2.3479628},
+  "hasMap": "https://www.google.com/maps?cid=18077941117600670560",
   "medicalSpecialty": "Podiatric",
   "priceRange": "€€"
 }
@@ -60,10 +63,10 @@
     </button>
     <nav class="site-nav" id="site-nav" data-collapsible aria-label="Navigation principale">
       <ul class="site-nav__list">
-        <li><a class="site-nav__link" href="index.html">Accueil</a></li>
-        <li><a class="site-nav__link" href="praticien.html">Le praticien</a></li>
+        <li><a class="site-nav__link" href="semelles-orthopediques-paris.html">Semelles</a></li>
         <li><a class="site-nav__link" href="prestations.html">Prestations</a></li>
         <li><a class="site-nav__link" href="sport.html">Sport</a></li>
+        <li><a class="site-nav__link" href="praticien.html">Le praticien</a></li>
         <li><a class="site-nav__link" href="infos-pratiques.html" aria-current="page">Infos pratiques</a></li>
         <li><a class="btn btn--primary" href="https://www.doctolib.fr/orthopediste-orthesiste/paris/pierre-emmanuel-giraud" target="_blank" rel="noopener">Prendre rendez-vous</a></li>
       </ul>
@@ -120,9 +123,28 @@
         </div>
         <div class="contact-item">
           <h3>Horaires</h3>
-          <p>Consultations <strong>sur rendez-vous</strong>, du lundi au samedi.</p>
+          <p>Consultations <strong>sur rendez-vous</strong>, du lundi au samedi, en français, anglais ou espagnol.</p>
           <p class="text-muted" style="font-size:var(--fs-75)">Les disponibilités à jour sont indiquées en temps réel sur Doctolib.</p>
         </div>
+      </div>
+      <div class="grid grid--2 mt-7" style="gap:clamp(1.5rem,1rem+3vw,3rem);align-items:start">
+        <div>
+          <h3 style="font-size:var(--fs-300);margin-bottom:var(--sp-4)">Plan</h3>
+          <div class="map" data-map>
+            <div style="display:grid;place-content:center;gap:var(--sp-3);height:100%;padding:var(--sp-5);text-align:center">
+              <p style="color:var(--ink-2);font-size:var(--fs-75);max-width:28em">La carte est fournie par OpenStreetMap. Elle ne se charge que si vous le demandez.</p>
+              <p><button class="btn btn--ghost" type="button" data-map-src="https://www.openstreetmap.org/export/embed.html?bbox=2.3420%2C48.8353%2C2.3540%2C48.8413&amp;layer=mapnik&amp;marker=48.83828%2C2.34796">Afficher la carte</button></p>
+            </div>
+          </div>
+          <p class="text-muted" style="font-size:var(--fs-75);margin-top:var(--sp-3)">Dans le bas de la rue Broca, à deux pas du boulevard de Port-Royal — à la frontière des 5ᵉ et 13ᵉ arrondissements.</p>
+        </div>
+        <figure class="figure-wrap">
+          <h3 style="font-size:var(--fs-300);margin-bottom:var(--sp-4)">Repérer le cabinet</h3>
+          <div class="figure figure--real" style="aspect-ratio:4/3">
+            <img src="assets/img/cabinet-giraud-orthopedie-rue-broca-facade-600.jpg" srcset="assets/img/cabinet-giraud-orthopedie-rue-broca-facade-600.jpg 600w, assets/img/cabinet-giraud-orthopedie-rue-broca-facade-900.jpg 900w" sizes="(min-width: 40em) 45vw, 100vw" width="600" height="750" style="object-position:50% 40%" alt="Façade vitrée du cabinet Giraud Orthopédie, 30-32 rue Broca, avec ses affiches « Semelles pour running » de part et d’autre de la porte." loading="lazy" decoding="async">
+          </div>
+          <figcaption>La vitrine du 30-32 rue Broca&nbsp;: porte vitrée encadrée de deux affiches.</figcaption>
+        </figure>
       </div>
     </div>
   </section>
@@ -138,16 +160,26 @@
             <caption>Tarifs pratiqués au cabinet.</caption>
             <tbody>
               <tr><th scope="row">Bilan podologique</th><td class="num">80&nbsp;€</td></tr>
-              <tr><th scope="row">Orthèses plantaires sur mesure (bilan inclus), adulte</th><td class="num">230&nbsp;€</td></tr>
+              <tr><th scope="row">Semelles orthopédiques sur mesure (bilan inclus), adulte</th><td class="num">230&nbsp;€</td></tr>
+              <tr><th scope="row">Semelles orthopédiques sur mesure (bilan inclus), enfant</th><td class="num">170&nbsp;€</td></tr>
               <tr><th scope="row">Orthèses du membre supérieur, orthoplasties</th><td class="num">Tarif fixe, communiqué au cabinet</td></tr>
             </tbody>
           </table>
+          <p class="text-muted mt-6" style="font-size:var(--fs-75)">Règlement par carte bancaire ou en espèces. La carte Vitale n’est pas acceptée au cabinet. Semelles garanties six mois.</p>
         </div>
+        <div class="flow">
         <aside class="note">
           <h3>Prise en charge</h3>
           <p>Sur prescription médicale, les orthèses plantaires peuvent ouvrir droit à une prise en charge partielle de l’Assurance Maladie, complétée le plus souvent par votre mutuelle. Le détail est précisé au cabinet selon votre situation.</p>
           <p class="text-muted" style="font-size:var(--fs-75)">Pensez à vous munir de votre ordonnance, le cas échéant.</p>
         </aside>
+        <div class="rating-card">
+          <span class="stars" style="--rating:4.7" aria-hidden="true"></span>
+          <p class="rating-card__score">4,7<small>/ 5 · 19 avis Google</small></p>
+          <p>Note relevée en octobre 2026 sur la fiche Google du cabinet.</p>
+          <p><a href="https://www.google.com/maps?cid=18077941117600670560" target="_blank" rel="noopener">Lire les avis sur Google<span class="sr-only"> (nouvelle fenêtre)</span></a></p>
+        </div>
+        </div>
       </div>
     </div>
   </section>
@@ -159,12 +191,20 @@
         <span class="eyebrow">Première visite</span>
         <h2 id="premiere-title">Ce qu’il est utile d’apporter</h2>
       </div>
-      <ul class="feature-list measure-wide">
+      <div class="grid grid--2" style="gap:clamp(2rem,1rem+4vw,4.5rem);align-items:start">
+      <ul class="feature-list">
         <li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><div><strong>Votre ordonnance</strong><p>Si vous en avez une, ainsi que les comptes-rendus médicaux ou d’imagerie utiles.</p></div></li>
         <li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><div><strong>Vos chaussures habituelles</strong><p>Notamment vos chaussures de sport — leur usure est une vraie source d’informations.</p></div></li>
         <li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><div><strong>Vos anciennes semelles</strong><p>Si vous en portez déjà, apportez-les pour comparaison.</p></div></li>
         <li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><div><strong>Une tenue adaptée</strong><p>De quoi dégager la jambe et le pied pour l’examen de la marche et de la course.</p></div></li>
       </ul>
+      <figure class="figure-wrap">
+        <div class="figure figure--wide figure--real">
+          <img src="assets/img/cabinet-giraud-orthopedie-salle-attente-900.jpg" srcset="assets/img/cabinet-giraud-orthopedie-salle-attente-900.jpg 900w, assets/img/cabinet-giraud-orthopedie-salle-attente-1600.jpg 1600w" sizes="(min-width: 40em) 45vw, 100vw" width="900" height="600" alt="Salle d’attente du cabinet : mur en pierre apparente, poutres anciennes, fauteuils blancs et tables basses." loading="lazy" decoding="async">
+        </div>
+        <figcaption>La salle d’attente, entre pierre et poutres anciennes.</figcaption>
+      </figure>
+      </div>
     </div>
   </section>
 
@@ -217,10 +257,12 @@
           75005 Paris<br>
           <a href="tel:+33684456397">06&nbsp;84&nbsp;45&nbsp;63&nbsp;97</a>
         </address>
+        <p style="margin-top:var(--sp-4)"><a class="rating rating--footer" href="https://www.google.com/maps?cid=18077941117600670560" target="_blank" rel="noopener"><span class="stars" style="--rating:4.7" aria-hidden="true"></span><span><span class="rating__score">4,7/5</span> · 19 avis Google<span class="sr-only"> (nouvelle fenêtre)</span></span></a></p>
       </div>
       <div class="footer-col">
         <h2>Navigation</h2>
         <ul>
+          <li><a href="semelles-orthopediques-paris.html">Semelles orthopédiques</a></li>
           <li><a href="praticien.html">Le praticien</a></li>
           <li><a href="prestations.html">Prestations</a></li>
           <li><a href="sport.html">Sport</a></li>
@@ -246,6 +288,11 @@
     </div>
   </div>
 </footer>
+
+<div class="mobile-cta" role="region" aria-label="Prise de rendez-vous rapide">
+  <a class="btn btn--primary" href="https://www.doctolib.fr/orthopediste-orthesiste/paris/pierre-emmanuel-giraud" target="_blank" rel="noopener">Prendre rendez-vous</a>
+  <a class="btn btn--ghost" href="tel:+33684456397" aria-label="Appeler le cabinet au 06 84 45 63 97">Appeler</a>
+</div>
 
 <script src="assets/js/main.js"></script>
 </body>
